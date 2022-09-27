@@ -5,7 +5,9 @@ import './Meals.css';
 
 const Meals = () => {
     const [meals, setMeals] = useState([]);
-    const [cart, setCart] = useState([]);
+    let [cart, setCart] = useState([]);
+
+
 
 
     // fetch api data
@@ -16,10 +18,14 @@ const Meals = () => {
             .then(data => setMeals(data.meals))
     }, []);
 
-    const addToCart = meal => {
-        setCart(meal);
 
+
+
+    const addToCart = (meal) => {
+        setCart([...cart,meal])
+        
     }
+    console.log(cart)
 
     return (
         <div className='my-5'>
@@ -30,7 +36,7 @@ const Meals = () => {
                     }
                 </div>
                 <div className="Cart">
-                    <Cart cart={cart}></Cart>
+                    {cart.map(meal=> <Cart cart={meal}></Cart>)}
                 </div>
             </div>
         </div>
