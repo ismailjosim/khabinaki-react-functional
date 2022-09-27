@@ -4,9 +4,6 @@ import './Meal.css';
 const Meal = ({ meal, addToCart }) => {
     const { idMeal, strMeal, strInstructions, strMealThumb } = meal;
 
-    // const handleAdd = item => { console.log(item) }
-
-
     return (
         <div className="card w-96 bg-[#19223C] shadow-xl">
             <figure><img src={strMealThumb} alt="Food item" /></figure>

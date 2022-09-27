@@ -18,14 +18,11 @@ const Meals = () => {
             .then(data => setMeals(data.meals))
     }, []);
 
-
-
-
     const addToCart = (meal) => {
-        setCart([...cart,meal])
-        
+        const newCart = [...cart, meal]
+        setCart(newCart);
     }
-    console.log(cart)
+
 
     return (
         <div className='my-5'>
@@ -36,7 +33,7 @@ const Meals = () => {
                     }
                 </div>
                 <div className="Cart">
-                    {cart.map(meal=> <Cart cart={meal}></Cart>)}
+                    <Cart cart={cart}></Cart>
                 </div>
             </div>
         </div>
